@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="col-3">
+        <div *ngIf="isDivisible==true" class="bg-danger p-4">
+            DIV 1
+        </div>
+    </div>
+    <div class="col-3">
+        <div *ngIf="Num1 == Num2" class="bg-primary p-4">
+            DIV 2 --{{Num1}}---{{Num2}}
+        </div>
+    </div>
+    <div  class="col-3">
+        <div *ngIf="true" class="bg-danger p-3">
+                Div 3
+        </div>
+    </div>
+    <div class="col-3">
+        <div *ngIf="isActive" class="bg-warning p-3">
+            Div 4
+        </div>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-3 text-center">
+        <button class="btn btn-success" (click)="showDiv1()">Show</button>
+        <button class="btn btn-danger" (click)="hideDiv1()">Hide</button>
+        <br>
+        <button class="btn btn-primary" (click)="toggleDiv1()">Toggle</button>
+    </div>
+    <div class="col-3 text-center">
+        <input type="text" [(ngModel)]="Num1" placeholder="Num1">
+        <input type="text" [(ngModel)]="Num2" placeholder="Num2">
+    </div>
+    <div class="col-3">
+        
+    </div>
+        <div class="col-3">
+        <input type="checkbox" [(ngModel)]="isActive">
+    </div>
+</div>

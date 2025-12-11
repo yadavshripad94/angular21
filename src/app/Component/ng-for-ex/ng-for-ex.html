@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-3">
+        <ul >
+            <li *ngFor="let item of cityList">{{item}}</li>
+        </ul>
+    </div>
+    <div class="col-3">
+        <button *ngFor="let roll of rollNoList">{{roll}}</button>
+    </div>
+     <div class="col-3">
+        <input *ngFor="let roll of rollNoList" [value]="roll" type="text">
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-4">
+        <table class="table table-borderd">
+            <thead>
+                <tr>
+                    <th>SR.No</th>
+                    <th>Name</th>
+                    <th>City</th>
+                    <th>isActive</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let stud of studentList;let srNo=index">
+                <tr>
+                   <td>{{srNo+1}}</td>
+                    <td>{{stud.name}}</td>
+                    <td>{{stud.city}}</td>
+                    <td>{{stud.isActive}}</td>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

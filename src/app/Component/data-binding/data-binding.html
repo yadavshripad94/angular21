@@ -1,0 +1,78 @@
+<div class="row">
+    <div class="col-3">
+        course =>  {{course}}
+    </div>
+    <div class="col-2">
+        {{courseDuration}}
+    </div>
+    <div class="col-2">
+        {{course}}
+    </div>
+    <div class="col-2">
+          without ng model
+        <input type="text" class="form-control" value="{{course}}">
+    </div>
+    <div class="col-2">
+        with ng model
+        <input type="text" class="form-control" [(ngModel)]="course">
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-3">
+        <input type="text" [value]="course">
+    </div>
+    <div class="col-3">
+        <input type="text" [placeholder]="myplceholder">
+    </div>
+    <div class="col-3">
+        <input [type]="course">
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-3">
+        <button class="btn btn-success" (click)="showWelcome()">Show</button>
+    </div>
+    <div class="col-3">
+        <button class="btn btn-danger" (click)="changeCourse()">Change Course</button>
+    </div>
+    <div class="col-3">
+        <select (change)="onCityChange()">
+        <option value="">Pune</option>
+        <option value="">Mumbai</option>
+        <option value="">Solapur</option>
+        </select>
+    </div>
+    <div class="col-4 pt-2 ">
+        <button class="btn btn-success"(click) ="setCourseName('DOT Net')">DOT Net</button>
+        <button class="btn btn-danger"(click) ="setCourseName('JAVA')">JAVA</button>
+        <button class="btn btn-info"(click) ="setCourseName('PHP')">PHP</button>
+        <button class="btn btn-warning"(click) ="setCourseName('PYTHON')">PYTHON</button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-3">
+        <input type="checkbox" [(ngModel)]="isActive"> --{{isActive}}
+    </div>
+    <div class="col-3">
+        <input type="radio" name="gender">Male
+        <input type="radio" name="gender">Female
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-3">
+        <input type="text" [(ngModel)]="studentObj.studName" placeholder="studName">
+    </div>
+    <div class="col-3">
+         <input type="text" [(ngModel)]="studentObj.Mobile" placeholder="Mobile">
+    </div>
+    <div class="col-3">
+         <input type="text" [(ngModel)]="studentObj.email" placeholder="email">
+    </div>
+    <div class="col-3">
+        {{studentObj.studName}}---{{studentObj.Mobile}}---{{studentObj.email}}
+    </div>
+</div>
