@@ -1,0 +1,89 @@
+<div class="row">
+    <div class="col-8">
+        <div class="card">
+            <div class="card-header bg-info">
+                <b>List</b>
+            </div>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr class="table-primary">
+                        <th>SR.No</th>
+                        <th>Student Name</th>
+                        <th>Contact No</th>
+                        <th>Total Fees</th>
+                        <th>Status</th>
+                        <th>Batch Name</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody >
+                    @for (item of feesEnrollmentList(); track $index) {
+                        <tr >
+                        <td>{{$index+1}}</td>
+                        <td>{{item.studentName}}</td>
+                        <td>{{item.contactNo}}</td>
+                        <td>{{item.totalFees}}</td>
+                        <td>{{item.status}}</td>
+                        <td>{{item.batchName}}</td>
+                        <td>
+                            <button class="btn btn-success"  (click)="onEdit(item)">Edit</button>
+                            <button class="btn btn-danger" (click)="onDelete(item.enrollmentId)">Delete</button>
+                        </td>
+                    </tr>
+                    }
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="card">
+            <div class="card-header bg-info">
+                <b>Fees Enrollment List</b>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <label for=""><b>Student Name</b></label>
+                            <input type="text" [(ngModel)]="newFesssObj.studentName" class="form-control">
+                        </div>
+                        <div class="col-6">
+                            <label for=""><b>contact No</b></label>
+                            <input type="text" [(ngModel)]="newFesssObj.contactNo" class="form-control">
+                        </div>
+                        <div class="row">
+                                <div class="col-6">
+                            <label for=""><b>Total Fees</b></label>
+                            <input type="text" [(ngModel)]="newFesssObj.totalFees" class="form-control">
+                        </div>
+                        <div class="col-6">
+                            <label for=""><b>Status</b></label>
+                            <input type="text" [(ngModel)]="newFesssObj.status" class="form-control">
+                        </div>
+                        </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <label for=""><b>Batch Name</b></label>
+                                    <input type="text" [(ngModel)]="newFesssObj.batchName" class="form-control">
+                                 </div>
+                               <div class="row pt-2">
+                                <div class="col-6 text-center ">
+                                      <button class="btn btn-secondary" (click)="resetData()">Reset</button>
+                                </div>
+                                  <div class="col-6 text-center">
+                                    @if (newFesssObj.enrollmentId==0) {
+                                        <button class="btn btn-success" (click)="saveNewEnrollmen()">Save</button>
+                                    }
+                                    @else {
+                                            <button class="btn btn-warning"(click)="onUpdate()">Update</button>
+                                    }
+                                 </div>
+                               </div>
+                            </div>     
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
