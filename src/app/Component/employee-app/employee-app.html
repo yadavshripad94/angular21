@@ -1,0 +1,128 @@
+<div class="container">
+  <div class="row ">
+    <div class="col-lg-8">
+      <div class="card ">
+        <div class="card-header bg-info ">
+          Employee Details
+        </div>
+
+        <div class="card-body ">
+          <table class="table table-bordered table-hover">
+            <thead class="table-dark text-center">
+              <tr>
+                <th>SR.NO</th>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Gender</th>
+                <!-- <th>Joining Date</th>
+                <th>Dept</th>
+                <th>Designation</th> -->
+                <th>Type</th>
+                <th>Salary</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              @for (item of empList(); track $index) {
+                <tr>
+                  <td>{{$index + 1}}</td>
+                  <td>{{ item.fullName }}</td>
+                  <td>{{ item.email }}</td>
+                  <td>{{ item.phone }}</td>
+                  <td>{{ item.gender }}</td>
+                  <!-- <td>{{ item.dateOfJoining | date:'dd-MMM-yyyy' }}</td>
+                  <td>{{ item.departmentId }}</td>
+                  <td>{{ item.designationId }}</td> -->
+                  <td>{{ item.employeeType }}</td>
+                  <td>{{ item.salary }}</td>
+                  <td>
+                    <button class="btn btn-success" (click)="onEdit(item)">Edit</button>
+                    <button class="btn btn-danger" (click)="onDelete(item.employeeId)">Delete</button>
+                  </td>
+                </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+      <div class="card ">
+        <div class="card-header bg-info ">
+          Add / Edit Employee
+        </div>
+
+        <div class="card-body">
+          <div class="row">
+
+            <div class="col-12">
+              <label class="form-label">Full Name</label>
+              <input type="text" [(ngModel)]="newEmpObj.fullName" class="form-control" placeholder="Enter full name">
+            </div>
+
+            <div class="col-12">
+              <label class="form-label">Email</label>
+              <input type="email" [(ngModel)]="newEmpObj.email" class="form-control" placeholder="Enter email">
+            </div>
+
+            <div class="col-6">
+              <label class="form-label">Phone</label>
+              <input type="text" [(ngModel)]="newEmpObj.phone" class="form-control" placeholder="Phone number">
+            </div>
+
+            <div class="col-6">
+              <label class="form-label">Gender</label>
+              <select class="form-select" [(ngModel)]="newEmpObj.gender">
+                <option value="">Select</option>
+                <option>M</option>
+                <option>F</option>
+              </select>
+            </div>
+
+            <div class="col-6">
+              <label class="form-label">Date of Joining</label>
+              <input type="date" [(ngModel)]="newEmpObj.dateOfJoining" class="form-control">
+            </div>
+
+            <div class="col-6">
+              <label class="form-label">Department</label>
+              <input type="number" [(ngModel)]="newEmpObj.departmentId" class="form-control" placeholder="Dept ID">
+            </div>
+
+            <div class="col-6">
+              <label class="form-label">Designation</label>
+              <input type="number" [(ngModel)]="newEmpObj.designationId" class="form-control" placeholder="Designation ID">
+            </div>
+
+            <div class="col-6">
+              <label class="form-label">Employee Type</label>
+              <input type="text" [(ngModel)]="newEmpObj.employeeType" class="form-control" placeholder="Permanent / Contract">
+            </div>
+
+            <div class="col-12">
+              <label class="form-label">Salary</label>
+              <input type="number" [(ngModel)]="newEmpObj.salary" class="form-control" placeholder="Salary">
+            </div>
+
+              <div class="row pt-2">
+                    <div class="col-6 text-center ">
+                        <button class="btn btn-secondary">Reset</button>
+                    </div>
+                     <div class="col-6 text-center ">
+                        @if (newEmpObj.employeeId) {
+                            
+                            <button class="btn btn-warning"(click)="onUpdate()">Update</button>
+                        }
+                        @else {
+                          <button class="btn btn-success"(click)="onSave()">Save</button>
+                        }
+                    </div>
+                </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -6,10 +6,13 @@ import { NgIfEx } from './Component/ng-if-ex/ng-if-ex';
 import { NgForEx } from './Component/ng-for-ex/ng-for-ex';
 import { VenderApi } from './Component/vender-api/vender-api';
 import { FeesTracking } from './fees-tracking/fees-tracking';
+import { EmployeeApp } from './Component/employee-app/employee-app';
 
 @Component({
   selector: 'app-root',
-  imports: [Variables,DataBinding,NgIfEx,NgForEx,VenderApi,FeesTracking,RouterOutlet,RouterLink,RouterLinkActive],
+  imports: [Variables,DataBinding,NgIfEx,NgForEx,VenderApi,FeesTracking,RouterOutlet,RouterLink,RouterLinkActive,
+    EmployeeApp
+  ],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

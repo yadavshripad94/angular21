@@ -6,6 +6,7 @@ import { Variables } from './Component/variables/variables';
 import { VenderApi } from './Component/vender-api/vender-api';
 import { FeesTracking } from './fees-tracking/fees-tracking';
 import { Enquiry } from './Component/enquiry/enquiry';
+import { EmployeeApp } from './Component/employee-app/employee-app';
 
 export const routes: Routes = [
 
@@ -16,7 +17,7 @@ export const routes: Routes = [
 { path: 'vender-api', component: VenderApi },
 { path: 'fees-tracking', component: FeesTracking },
 { path: 'enquiry', component: Enquiry },
-
+{ path: 'employee-app', component: EmployeeApp },
 
 
 ];
